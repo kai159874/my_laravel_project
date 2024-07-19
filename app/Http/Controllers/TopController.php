@@ -8,16 +8,16 @@ class TopController extends Controller {
   public function index( Request $request ) {
     $sampleValue = "sample テキストです。";
 
-    $records = DB::connection('mysql')->select("select * from items");
-    $name = $records[0] -> name; 
+    // $records = DB::connection('mysql')->select("select * from items");
+    // $name = $records[0] -> name; 
 
     // $insertResult = DB::connection("mysql") -> insert("insert into items (id,name,price) values (2, 'メロン',2000)");
 
     // $updateResult = DB::connection("mysql") -> update("update items set price = 600 where name = 'test'");
 
-    $deleteResult = DB::connection("mysql") -> delete("delete from items where name = 'test'");
+    // $deleteResult = DB::connection("mysql") -> delete("delete from items where name = 'test'");
 
-    dd($deleteResult);
+    // dd($deleteResult);
     
     return view("top/index", [ "sampleValue" => $sampleValue ]);
   }
