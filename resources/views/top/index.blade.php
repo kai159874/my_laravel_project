@@ -30,22 +30,8 @@
         </form>
 
         <!-- 追加 -->
-        <section class="tab-layout">
-            <div class="tabs">
-                <button class="tab" v-on:click="page=1">tab1</button>
-                <button class="tab" v-on:click="page=2">tab2</button>
-                <button class="tab" v-on:click="page=3">tab3</button>
-            </div>
-            <div class="content" v-bind:class="{ show : page == 1 }">
-                <p>page1</p>
-            </div>
-            <div class="content" v-bind:class="{ show : page == 2 }">
-                <p>page2</p>
-            </div>
-            <div class="content" v-bind:class="{ show : page == 3 }">
-                <p>page3</p>
-            </div>
-        </section>
+        <sample-component tab-name1="A" tab-name2="B" tab-name3="C" tab-body1="tabBody1-A" tab-body2="tabBody2-B" tab-body3="tabBody3-C"></sample-component>
+        <sample-component tab-name1="D" tab-name2="E" tab-name3="F" tab-body1="tabBody1-D" tab-body2="tabBody2-E" tab-body3="tabBody3-F"></sample-component>
     </main>
 
     <script src="/js/build/top/index.js"></script>
