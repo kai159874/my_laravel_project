@@ -2,33 +2,38 @@ import * as Vue from "vue";
 import { ref } from "vue";
 
 const application = {
-  setup() {
-    const name = ref("");
-    const validateResult = ref("");
+    setup() {
 
-    const title = ref("vue test title");
+        const page = ref("1"); 
 
-    let buttonClick = function() {
-      title.value = "value update.";
-    };
+        const name = ref("");
+        const validateResult = ref("");
 
-    let validate = function () {
-      let isKana = name.value.match(/^[ぁ-んー ]*$/);
-      validateResult.value = isKana ? "正常" : "ひらがな以外が入力されています。";
-    };
+        const title = ref("vue test title.");
 
-    return {
-      title,
-      buttonClick,
+        let buttonClick = function () {
+            title.value = "value update.";
+        };
 
-      name,
-      validateResult,
-      validate,
-    };
-  },
+        let validate = function () {
+            let isKana = name.value.match(/^[ぁ-んー　]*$/);
+            validateResult.value = isKana ? "正常" : "ひらがな以外が入力されています。";
+        };
+
+        return {
+            title,
+            buttonClick,
+
+            name,
+            validateResult,
+            validate,
+
+            page, // 追加
+        };
+    },
 };
 
 try {
-  let mainElement = document.getElementsByTagName("main")[0];
-  Vue.createApp(application).mount(mainElement);
+    let mainElement = document.getElementsByTagName("main")[0];
+    Vue.createApp(application).mount(mainElement);
 } catch (e) {}

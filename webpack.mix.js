@@ -1,6 +1,6 @@
 const directories = [
     "index",
-    "login", // 追加
+    "login", 
     "top"
 ];
 
